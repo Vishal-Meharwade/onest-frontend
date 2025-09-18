@@ -1,65 +1,56 @@
-# 🎓 Alumni Job Connect
+# 🎓 Alumni Job Connect – Full-Stack Platform
 
-**Connecting Colleges, Alumni & Local Jobs – Effortlessly!**  
+**Connecting Colleges, Alumni & Local Jobs Effortlessly**  
 
----
-
-![banner](https://user-images.githubusercontent.com/your-banner-image.png)  
-
-Alumni Job Connect is a **full-stack platform** designed for government and small private colleges to **help recent graduates (0–2 years out) find jobs locally** without manual effort. Even colleges with minimal tech staff can onboard alumni, match them to jobs, and track outcomes.  
+This project is a **full-stack Alumni Job Connect platform** built to help government and small private colleges connect recent alumni (0–2 years out) with local employers. Even institutions with minimal tech staff can onboard alumni, verify skills, and manage job matching automatically.
 
 ---
 
-## 🌟 Key Features
+## 🌟 Highlights & Achievements
 
-### Alumni Onboarding
-- Register via **Email, Phone, or WhatsApp**
-- Verified automatically using **graduation data**
-- CSV upload for bulk alumni verification
+This project showcases:
 
-### Job Matching
-- Employers post jobs with required skills & location
-- Alumni receive **automated match alerts**
-- One-click **job application**
+- **End-to-end Full-Stack Development**
+  - Frontend in **React.js** with **TailwindCSS**, fully responsive and modern UI
+  - Backend in **Node.js + Express** with JWT-based authentication
+  - PostgreSQL database with normalized schema for alumni, employers, jobs, applications, referrals, and peer verifications
 
-### Peer-Verified Trust Network (USP)
-- Alumni validate each other’s skills
-- Refer jobs from their companies
-- Earn **Trust Points** & badges
-- Builds a **trust-based hiring ecosystem**
+- **Advanced Features Implemented**
+  - Alumni onboarding via **web & WhatsApp**
+  - Skill verification & readiness scoring
+  - Job matching engine filtering alumni by skills & location
+  - Peer-Verified Trust Network (USP)
+  - Alumni referral system & trust scoring
+  - College and employer dashboards with CRUD operations
 
-### Admin & Employer Controls
-- Approve or edit job posts
-- Shortlist candidates
-- Track hires & alumni placement
+- **Technical Depth**
+  - **REST API architecture** with Axios integration
+  - JWT-based **auth and role management**
+  - Dynamic dashboard rendering based on user role (Alumni, Employer, College Admin)
+  - File upload support for resumes, certificates, and CSV verification
+  - Skill auto-tagging and profile completeness scoring
+  - Real-time peer validation workflow
 
-### Communication & Tracking
-- Job alerts via **WhatsApp** or web
-- Alumni can update employment status anytime
-- Automatic follow-ups for inactive alumni
-
----
-
-## 🛠️ Tech Stack
-
-| Layer         | Technology |
-| ------------- | ---------- |
-| Frontend      | React.js + TailwindCSS |
-| Backend       | Node.js + Express |
-| Database      | PostgreSQL (`alumni_database`) |
-| Authentication| JWT / Token-based |
-| API Testing   | Integrated via Frontend |
+- **Modern & Aesthetic UI**
+  - Custom TailwindCSS components
+  - Interactive dashboards for alumni/job tracking
+  - Elegant forms, modals, and notifications
+  - Unique design unlike standard admin panels
 
 ---
 
-## 💡 Unique Feature
-**Peer-Verified Trust Network** – Alumni validate skills, refer peers to jobs, and earn a trust score, creating a **self-sustaining ecosystem** even for colleges with no dedicated staff.  
+## 🧱 Database (PostgreSQL – `alumni_database`)
 
----
+Tables implemented:
 
-## 📁 Database Schema (PostgreSQL)
+- **alumni** – tracks alumni info, skills, resume, verification, and trust scores
+- **employers** – employer credentials and company info
+- **jobs** – job postings with skills, type, location
+- **job_applications** – alumni job applications with status
+- **referrals** – tracks alumni job referrals
+- **peer_verifications** – peer skill validation for trust scores
 
-**Alumni Table**
+**Example Table: Alumni**
 ```sql
 CREATE TABLE alumni (
   id SERIAL PRIMARY KEY,
