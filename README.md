@@ -1,69 +1,79 @@
-# React + TypeScript + Vite
+# 🎓 Alumni Job Connect
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Connecting Colleges, Alumni & Local Jobs – Effortlessly!**  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![banner](https://user-images.githubusercontent.com/your-banner-image.png)  
 
-## Expanding the ESLint configuration
+Alumni Job Connect is a **full-stack platform** designed for government and small private colleges to **help recent graduates (0–2 years out) find jobs locally** without manual effort. Even colleges with minimal tech staff can onboard alumni, match them to jobs, and track outcomes.  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🌟 Key Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Alumni Onboarding
+- Register via **Email, Phone, or WhatsApp**
+- Verified automatically using **graduation data**
+- CSV upload for bulk alumni verification
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Job Matching
+- Employers post jobs with required skills & location
+- Alumni receive **automated match alerts**
+- One-click **job application**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Peer-Verified Trust Network (USP)
+- Alumni validate each other’s skills
+- Refer jobs from their companies
+- Earn **Trust Points** & badges
+- Builds a **trust-based hiring ecosystem**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Admin & Employer Controls
+- Approve or edit job posts
+- Shortlist candidates
+- Track hires & alumni placement
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Communication & Tracking
+- Job alerts via **WhatsApp** or web
+- Alumni can update employment status anytime
+- Automatic follow-ups for inactive alumni
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer         | Technology |
+| ------------- | ---------- |
+| Frontend      | React.js + TailwindCSS |
+| Backend       | Node.js + Express |
+| Database      | PostgreSQL (`alumni_database`) |
+| Authentication| JWT / Token-based |
+| API Testing   | Integrated via Frontend |
+
+---
+
+## 💡 Unique Feature
+**Peer-Verified Trust Network** – Alumni validate skills, refer peers to jobs, and earn a trust score, creating a **self-sustaining ecosystem** even for colleges with no dedicated staff.  
+
+---
+
+## 📁 Database Schema (PostgreSQL)
+
+**Alumni Table**
+```sql
+CREATE TABLE alumni (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR,
+  email VARCHAR UNIQUE,
+  phone VARCHAR,
+  whatsapp_connected BOOLEAN,
+  graduation_year INT,
+  degree VARCHAR,
+  is_verified BOOLEAN DEFAULT FALSE,
+  readiness_score INT,
+  trust_score INT DEFAULT 0,
+  resume_link TEXT,
+  certifications TEXT[],
+  skills TEXT[],
+  current_employer TEXT
+);
